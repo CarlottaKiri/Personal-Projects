@@ -8,6 +8,7 @@ html {
 
 body {
   margin: 0;
+  background-image: url(./img/body-bg.jpg);
 }
 main {
   background-image: url(./img/body-bg.jpg);
@@ -57,38 +58,123 @@ footer h2 {
   border-radius: 10px;
 }
 
-.intro__section {
+.navbar {
   display: flex;
+  top: 0;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  margin: 0px 20px;
+  padding: 0 10px;
+  background-color: rgb(255, 225, 0);
+  z-index: 1;
 }
 
-.logo {
+.navbar .logo1 {
+  width: 110px;
+}
+
+.navbar .logo2 {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar .buttons {
   display: flex;
+  gap: 20px;
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+.buttons button {
+  padding: 3px;
+  background-color: orange;
+  border-radius: 8px;
 }
 
-.login__button {
-  width: 60px;
-  height: 30px;
-  font-size: 16px;
-  font-weight: bold;
+.dropbtn {
+  position: relative;
+  top: 8px;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 1px 1px rgb(154, 159, 9);
+  background-color: rgb(255, 225, 0);
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.dropbtn:hover {
+  cursor: pointer;
+}
+
+.dropbtn img:hover {
+  animation: shake-animation 6s ease infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes shake-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  1.78571% {
+    transform: translate(2px, 0);
+  }
+  3.57143% {
+    transform: translate(0, 0);
+  }
+  5.35714% {
+    transform: translate(2px, 0);
+  }
+  7.14286% {
+    transform: translate(0, 0);
+  }
+  8.92857% {
+    transform: translate(2px, 0);
+  }
+  10.71429% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 200px;
   font-family: "TheGoodMonolith", sans-serif;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 199, 32);
+  font-weight: bold;
   border-radius: 10px;
+  background-color: rgb(254, 236, 43);
+  text-align: center;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
-.login__button:hover {
-  background-color: rgb(144, 3, 3);
-  color: white;
+.dropdown-content a {
+  color: black;
+  padding: 12px 0px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(218, 134, 0);
+}
+
+.show {
+  display: block;
 }
 
 .popup {
@@ -142,69 +228,6 @@ footer h2 {
   background-color: rgb(43, 42, 42);
   border-radius: 10px;
   padding: 10px;
-}
-
-.dropbtn {
-  background-color: rgb(255, 199, 32);
-  position: fixed;
-  top: 4%;
-  right: 2px;
-  padding: 10px;
-
-  border-radius: 50px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: rgb(254, 239, 36);
-}
-
-.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: fixed;
-  left: 10%;
-  font-family: "TheGoodMonolith", sans-serif;
-  font-weight: bold;
-  border-radius: 10px;
-  width: 80%;
-  background-color: rgb(254, 236, 43);
-  text-align: center;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  animation: growDown 300ms ease-in-out forwards;
-  transform-origin: top center;
-}
-@keyframes growDown {
-  0% {
-    transform: scaleY(0);
-  }
-  80% {
-    transform: scaleY(1.1);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 0px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: rgb(218, 134, 0);
-}
-
-.show {
-  display: block;
 }
 
 .hero__section {
@@ -366,6 +389,7 @@ footer h2 {
     height: 80px;
     border: none;
     border: 1px solid gray;
+    z-index: 3;
   }
   .hero__section h1 {
     font-size: 46px;
